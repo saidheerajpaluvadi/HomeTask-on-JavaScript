@@ -1,0 +1,187 @@
+<html>
+<head>
+<title>EPAM Register </title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+
+*{
+font-family: sans-serif;
+}
+table{
+border:1px solid #ffffff;
+border-radius:3px;
+margin=0px;
+}
+.myheader{
+background-color:#86E5CB ;
+font-weight:bold;
+padding:5px;
+color:white;
+display: flex;
+margin-bottom:5px;
+}
+.myheader div{
+flex:1;
+}
+
+input{
+margin:5px;
+width : 250px;
+font-weight:bold;
+padding:10px;  
+border:1px solid #BCBDBD;
+}
+
+i{
+color:#BCBDBD;
+float:right-side; 
+margin-left:-33px;
+}
+Button
+{
+background-color:#86E5CB ;
+color:white;
+border:1px solid;
+border-radius: 5px;
+font-weight:bold;
+padding:5px;
+width:250px;
+margin:7px;
+}
+
+#main {
+  display: flex;
+  align-items: center;
+}
+
+#main div {
+   flex: 1;
+   }
+
+
+</style>
+<script>
+
+
+function fd()
+ {
+ 	var pattern =/^([0-9]{2})-([0-9]{2})-([0-9]{4})$/;
+ 	if(document.fn.username.value=="")
+	 {
+		alert("Please Enter Your First Name");
+		document.fn.username.focus();
+	   	return false;
+	 }
+	 else if(document.fn.email.value=="")
+	 {
+	 	alert("Please Enter you email");
+		document.fn.email.focus();
+		return false;
+	 }
+	 else
+	if(document.fn.email.value.includes('@')==false)
+	 {
+		alert("Please Enter valid email");
+		document.fn.email.focus();
+		return false;
+	 }
+	 else if(document.fn.mob.value=="")
+	 {
+	 	alert("Please Enter your mobile number");
+		document.fn.mob.focus();
+		return false;
+	 }
+	 else
+	if(document.fn.mob.value.length!=10)
+	 {
+		alert("Please Enter valid mobile number");
+		document.fn.mob.focus();
+		return false;
+	 }
+	 else
+	if(document.fn.dob.value.length=="")
+	 {
+		alert("Please enter your date of birth");
+		document.fn.dob.focus();
+		return false;
+	 }
+	 else
+	if(pattern.test(document.fn.dob.value)==false)
+	 {
+		alert("Please enter your date of birth in format DD-MM-YYYY");
+		document.fn.dob.focus();
+		return false;
+	 }
+	else
+	if(document.fn.pass.value=="")
+	 {
+		alert("Please Enter Your Password");
+		document.fn.pass.focus();
+		return false;
+	 }
+	else
+	if(document.fn.cpass.value=="")
+	 {
+		alert("Please confirm your password");
+		document.fn.cpass.focus();
+		return false;
+	}
+	else if(document.fn.cpass.value!= document.fn.pass.value)
+	{
+		alert("Password's doesn't match");
+		document.fn.cpass.focus();
+		return false;
+	}
+	
+	else
+	return true;
+ }
+
+</script>
+</head>
+<body>
+<table align="center" >
+<td>
+<div class = "myheader">
+<div><i class="fa fa-graduation-cap" style="margin-left:10px;color:white" ></i></div>
+<div style="text-align:center;">Sign up</div>
+<div style="text-align:right;margin-right:10px">X</div>
+</div>
+
+<form name="fn" method="POST" onsubmit="return fd()" action="javascript:alert('Registration success!');">
+	<div>
+<input type = "text" name = "username" placeholder="Username"/>
+<i style="position: absolute;margin-top: 15px;"class="fa fa-user" aria-hidden="true"></i>
+</div>
+<div>
+<input type = "text" name = "email" placeholder="Email ID"/>
+<i style="position: absolute;margin-top: 15px;"class="fa fa-envelope" aria-hidden="true"></i>
+</div>
+<div>
+<input type = "text" name = "mob" placeholder="Mobile"/>
+<i style="position: absolute;margin-top: 15px;"class="fa fa-phone" aria-hidden="true"></i>
+</div>
+<div> 
+<input type = "text" name = "dob" placeholder="DD-MM-YYYY (birth date)"/>
+<i style="position: absolute;margin-top: 15px;" class="fa fa-calendar"></i>
+</div>
+<div> 
+<input type = "password" name = "pass" placeholder="password"/>
+<i style="position: absolute;margin-top: 15px;" class="fa fa-lock"></i>
+</div>
+<div> 
+<input type = "password" name = "cpass" placeholder="confirm password"/>
+<i style="position: absolute;margin-top: 15px;" class="fa fa-lock"></i>
+</div>
+
+
+<Button style="font-family: sans-serif;background-color:#A4E11A;color:white;font-weight:bold;" formmethod="POST">Register</Button>
+</br>
+</form>
+
+
+</td>
+</table>
+</body>
+</html>
